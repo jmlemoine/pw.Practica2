@@ -35,5 +35,19 @@
         </div>
     </nav>
 
+    <div class="container mt-4">
+
+        <form method="post" action="/agregaralaListaEstudiantes">
+
+            <div class="form-group">
+                <label for="matricula">Matricula</label>
+                <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matricula" required>
+
+            </div>
+
+        </form>
+
+    </div>
+
 </body>
 </html>
