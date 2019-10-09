@@ -15,4 +15,13 @@ public class Estudiante {
 
     }
 
+    public Estudiante(){
+        this.matricula = 0;
+        this.nombre = "";
+        this.apellido = "";
+        this.telefono = "";
+
+    }
+
+
 }
