@@ -33,6 +33,10 @@ public class Main {
 
         }));
 
+        Spark.get("/Agregar", ((request, response) -> {
+            Template plantillaInicio = config.getTemplate("Templates/agregarEstudiante.ftl");
+            return plantillaInicio;
+        }));
 
     }
 
