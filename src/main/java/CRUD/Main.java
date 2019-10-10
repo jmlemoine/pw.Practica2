@@ -38,6 +38,25 @@ public class Main {
             return plantillaInicio;
         }));
 
+        Spark.post("/agregaralaListaEstudiantes", ((request, response) -> {
+            StringWriter writer = new StringWriter();
+            try {
+                String matricula = request.queryParams("matricula");
+                String nombre = request.queryParams("nombre");
+                String apellido = request.queryParams("apellido");
+                String telefono = request.queryParams("telefono");
+                listEstudiantes.add(new Estudiante(Integer.parseInt(matricula), nombre, apellido, telefono));
+                response.redirect("/");
+
+            }catch (Exception e){
+                System.out.println(e);
+                response.redirect("/Agregar");
+
+            }
+            return writer;
+
+        }));
+
     }
 
 

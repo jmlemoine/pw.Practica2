@@ -56,6 +56,25 @@
                             <th>Opcion #3</th>
                         </tr>
                     </thead>
+
+                    <tbody>
+                        <#assign contEstudiantes = 0>
+
+                        <#list listEstudiantes as Estudiante>
+                            <tr class="animated fadeInUp">
+                                <td>${Estudiante.matricula?string["0"]}</td>
+                                <td>${Estudiante.nombre}</td>
+                                <td>${Estudiante.apellido}</td>
+                                <td>${Estudiante.telefono}</td>
+                                
+
+                            </tr>
+
+                        </#list>
+
+
+                    </tbody>
+
                 </table>
             </#if>
 
