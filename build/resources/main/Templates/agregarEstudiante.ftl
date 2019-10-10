@@ -63,12 +63,16 @@
 
             </div>
 
-
+            <button type="submit" class="btn btn-success"><i class="fas fa-plus-square"></i>Agregar</button>
 
 
         </form>
 
     </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
