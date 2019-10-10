@@ -45,6 +45,21 @@
 
             </div>
 
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" required>
+
+            </div>
+
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" required>
+
+            </div>
+
+
+
+
         </form>
 
     </div>
