@@ -66,9 +66,12 @@
                                 <td>${Estudiante.nombre}</td>
                                 <td>${Estudiante.apellido}</td>
                                 <td>${Estudiante.telefono}</td>
-                                
+                                <td><a href="/VisualizarEstudiante/${contEstudiantes}" class="btn btn-light" role="button"><i class="fas fa-eye"></i>Ver</a></td>
+
 
                             </tr>
+
+                                <#assign contEstudiantes++>
 
                         </#list>
 
@@ -81,6 +84,10 @@
         </div>
 
     </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
