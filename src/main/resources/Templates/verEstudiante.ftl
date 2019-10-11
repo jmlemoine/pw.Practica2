@@ -18,7 +18,38 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
+
 <body>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Practica #2 - 2014-0795</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <img src="https://www.thefamouspeople.com/profiles/images/david-ortiz-7.jpg" alt="David Ortiz" class="rounded-circle mb-2" width="128px"/>
+                <ul class="list-group">
+                    <li class="list-group-item"><span class="font-weight-bold">Matricula: </span>${Estudiante.matricula?string["0"]}</span></li>
+                    <li class="list-group-item"><span class="font-weight-bold">Nombre: </span>${Estudiante.nombre}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Apellido: </span>${Estudiante.apellido}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Teléfono: </span>${Estudiante.telefono}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

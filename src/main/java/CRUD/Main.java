@@ -69,7 +69,6 @@ public class Main {
             resultTemplate.process(attributos, writer);
             return writer;
 
-
         }));
 
 
