@@ -36,5 +36,20 @@
         </div>
     </nav>
 
+    <!-- Page Content -->
+    <div class="container mt-4">
+
+        <form method="post" action="/ModificarenListEstudiantes">
+
+            <div class="form-group">
+                <label for="matricula">Matricula</label>
+                <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Matricula" value='${Estudiante.matricula?string["0"]}' required readonly>
+
+            </div>
+
+        </form>
+
+    </div>
+
 </body>
 </html>
