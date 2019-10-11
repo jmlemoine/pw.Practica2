@@ -45,11 +45,15 @@
                     <li class="list-group-item"><span class="font-weight-bold">Matricula: </span>${Estudiante.matricula?string["0"]}</span></li>
                     <li class="list-group-item"><span class="font-weight-bold">Nombre: </span>${Estudiante.nombre}</li>
                     <li class="list-group-item"><span class="font-weight-bold">Apellido: </span>${Estudiante.apellido}</li>
-                    <li class="list-group-item"><span class="font-weight-bold">Teléfono: </span>${Estudiante.telefono}</li>
+                    <li class="list-group-item"><span class="font-weight-bold">Telefono: </span>${Estudiante.telefono}</li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
