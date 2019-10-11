@@ -10,18 +10,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static spark.Spark.staticFiles;
+import static spark.Spark.*;
 
 public class Main {
 
     public static void main(String[] args){
 
         staticFiles.location("/Templates");
+
         final Configuration config = new Configuration(new Version(2, 3, 0));
         config.setClassForTemplateLoading(Main.class, "/");
 
         ArrayList<Estudiante> listEstudiantes = new ArrayList<Estudiante>();
-        Spark.get("/", ((request, response) -> {
+        Spark.get("/", (request, response) -> {
             Template plantillaInicio = config.getTemplate("Templates/Inicio.ftl");
             StringWriter writer = new StringWriter();
 
@@ -31,7 +32,7 @@ public class Main {
             plantillaInicio.process(attributes, writer);
             return writer;
 
-        }));
+        });
 
         Spark.get("/Agregar", ((request, response) -> {
             Template plantillaInicio = config.getTemplate("Templates/agregarEstudiante.ftl");
@@ -57,6 +58,50 @@ public class Main {
 
         }));
 
+        Spark.get("/Modificar/:id", (request, response) -> {
+            Template resultTemplate = config.getTemplate("Templates/modificarEstudiante.ftl");
+            StringWriter writer = new StringWriter();
+
+            int id = Integer.parseInt(request.params("id"));
+
+            Map<String, Object> attributos = new HashMap<>();
+            attributos.put("Estudiante", listEstudiantes.get(id));
+
+            resultTemplate.process(attributos, writer);
+            return writer;
+
+        });
+
+        Spark.post("/ModificarenListEstudiantes", (request, response) -> {
+            StringWriter writer = new StringWriter();
+
+            try {
+                String matricula = request.queryParams("matricula");
+                String nombre = request.queryParams("nombre");
+                String apellido = request.queryParams("apellido");
+                String telefono = request.queryParams("telefono");
+                Estudiante estudiante = new Estudiante(Integer.parseInt(matricula), nombre, apellido, telefono);
+                for(Estudiante estud: listEstudiantes){
+                    if(estud.getMatricula() == estudiante.getMatricula()) {
+                        estud.setNombre(estudiante.getNombre());
+                        estud.setApellido(estudiante.getApellido());
+                        estud.setTelefono(estudiante.getTelefono());
+                        estud.setMatricula(estudiante.getMatricula());
+                        break;
+                    }
+
+                }
+                response.redirect("/");
+
+            }catch (Exception e){
+                System.out.println("Error al modificar el estudiante: "+ e.toString());
+                response.redirect("/");
+            }
+            return writer;
+
+
+        });
+
         Spark.get("/VisualizarEstudiante/:id", ((request, response) -> {
             Template resultTemplate = config.getTemplate("Templates/verEstudiante.ftl");
             StringWriter writer = new StringWriter();
@@ -71,22 +116,10 @@ public class Main {
 
         }));
 
-        Spark.get("/Modificar/:id", ((request, response) -> {
-            Template resultTemplate = config.getTemplate("Templates/modificarEstudiante.ftl");
-            StringWriter writer = new StringWriter();
-
-            int id = Integer.parseInt(request.params("id"));
-
-            Map<String, Object> attributos = new HashMap<>();
-            attributos.put("Estudiante", listEstudiantes.get(id));
-
-            resultTemplate.process(attributos, writer);
-            return writer;
-
-        }));
 
 
     }
 
 
 }
+

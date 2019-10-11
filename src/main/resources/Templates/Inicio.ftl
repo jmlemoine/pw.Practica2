@@ -67,7 +67,7 @@
                                 <td>${Estudiante.apellido}</td>
                                 <td>${Estudiante.telefono}</td>
                                 <td><a href="/VisualizarEstudiante/${contEstudiantes}" class="btn btn-light" role="button"><i class="fas fa-eye"></i>Ver</a></td>
-                                <td><a href="/Modificar/${contEstudiantes}" class="btn btn-light" role="button"><i class="fas fa-pencil-alt"></i> Editar</a></td>
+                                <td><a href="/Modificar/${contEstudiantes}" class="btn btn-light" role="button"><i class="fas fa-pencil-alt"></i>Editar</a></td>
 
                             </tr>
 

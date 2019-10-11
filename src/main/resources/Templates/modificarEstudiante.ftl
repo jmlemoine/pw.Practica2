@@ -55,19 +55,25 @@
 
             <div class="form-group">
                 <label for="apellido">Apellido</label>
-                <input type="text" class="form-control" id="apellido" placeholder="Apellido" value="${Estudiante.apellido}" required>
+                <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Apellido" value="${Estudiante.apellido}" required>
 
             </div>
 
             <div>
                 <label for="telefono">Telefono</label>
-                <input type="text" class="form-control" id="telefono" placeholder="Telefono" value="${Estudiante.telefono}" required>
+                <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" value="${Estudiante.telefono}" required>
 
             </div>
+
+            <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i>Editar</button>
 
         </form>
 
     </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
