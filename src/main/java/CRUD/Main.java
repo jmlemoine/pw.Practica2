@@ -71,6 +71,20 @@ public class Main {
 
         }));
 
+        Spark.get("/Modificar/:id", ((request, response) -> {
+            Template resultTemplate = config.getTemplate("Templates/modificarEstudiante.ftl");
+            StringWriter writer = new StringWriter();
+
+            int id = Integer.parseInt(request.params("id"));
+
+            Map<String, Object> attributos = new HashMap<>();
+            attributos.put("Estudiante", listEstudiantes.get(id));
+
+            resultTemplate.process(attributos, writer);
+            return writer;
+
+        }));
+
 
     }
 
