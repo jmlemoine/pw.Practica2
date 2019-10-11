@@ -59,6 +59,12 @@
 
             </div>
 
+            <div>
+                <label for="telefono">Telefono</label>
+                <input type="text" class="form-control" id="telefono" placeholder="Telefono" value="${Estudiante.telefono}" required>
+
+            </div>
+
         </form>
 
     </div>
