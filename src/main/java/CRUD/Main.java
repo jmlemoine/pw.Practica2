@@ -58,6 +58,16 @@ public class Main {
 
         }));
 
+        Spark.get("/EliminarenListEstudiantes/:id", (request, response) -> {
+            StringWriter writer = new StringWriter();
+            int id = Integer.parseInt(request.params("id"));
+
+            listEstudiantes.remove(id);
+            response.redirect("/");
+            return writer;
+
+        });
+
         Spark.get("/Modificar/:id", (request, response) -> {
             Template resultTemplate = config.getTemplate("Templates/modificarEstudiante.ftl");
             StringWriter writer = new StringWriter();
