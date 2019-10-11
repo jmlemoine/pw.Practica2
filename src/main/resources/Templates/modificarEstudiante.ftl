@@ -53,6 +53,12 @@
 
             </div>
 
+            <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" class="form-control" id="apellido" placeholder="Apellido" value="${Estudiante.apellido}" required>
+
+            </div>
+
         </form>
 
     </div>
