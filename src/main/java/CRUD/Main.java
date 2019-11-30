@@ -16,6 +16,13 @@ public class Main {
 
     public static void main(String[] args){
 
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            port(Integer.parseInt(processBuilder.environment().get("PORT")));
+        }else{
+            port(8080);
+        }
+
         staticFiles.location("/Templates");
 
         final Configuration config = new Configuration(new Version(2, 3, 0));

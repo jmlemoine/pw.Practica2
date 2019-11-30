@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '4.0.4'
 
 }
 
@@ -7,9 +9,15 @@ group 'pw'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+mainClassName = "CRUD.Main"
 
 repositories {
     mavenCentral()
+}
+
+task stage {
+    dependsOn shadowJar
+
 }
 
 dependencies {
